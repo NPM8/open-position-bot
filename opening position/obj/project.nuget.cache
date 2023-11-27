@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "uCs8k1hAnJK8wVsDQWdthcpc7nmz9D9sVn3GJD86oMTnHqL71s3jHmMaoIjzRxGZT/8hOGYZAXriJkaAGdwKww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nnnpd\\OneDrive\\Documents\\cAlgo\\Sources\\Robots\\opening position\\opening position\\opening position.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nnnpd\\.nuget\\packages\\ctrader.automate\\1.0.8\\ctrader.automate.1.0.8.nupkg.sha512",
+    "C:\\Users\\nnnpd\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nnnpd\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\nnnpd\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
