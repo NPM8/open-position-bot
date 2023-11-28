@@ -37,6 +37,17 @@ namespace cAlgo.Robots
         private TextBlock postionInfoTextBlock;
         private Button buyButton;
         private Button sellButton;
+
+        private string slLineName = "SLine";
+        private string slTextName = "SLLineText";
+        private string tpLineName = "TpLine";
+
+        private void DrawLinesAtPrice(double price)
+        {
+            Chart.RemoveObject(slLineName);
+            Chart.DrawHorizontalLine(slLineName, price, Color.Purple, 3, LineStyle.Dots);
+        }
+        
         
         private double GetPositionSize(double riskPercentage, double stopLossPips)
         {
@@ -90,7 +101,9 @@ namespace cAlgo.Robots
 
         private void HandleMouseDown(ChartMouseEventArgs args)
         {
-            stopLossTextBox.Text = Math.Round(args.YValue, 2).ToString(CultureInfo.CurrentCulture);
+            var clickedPrice = Math.Round(args.YValue, 2);
+            DrawLinesAtPrice(clickedPrice);
+            stopLossTextBox.Text = clickedPrice.ToString(CultureInfo.CurrentCulture);
         }
 
 
@@ -120,6 +133,14 @@ namespace cAlgo.Robots
                 Width = 200,
                 Margin = "5 10 0 0",
                 Text = Symbol.Bid.ToString(CultureInfo.CurrentCulture),
+            };
+
+            stopLossTextBox.TextChanged += (evt) =>
+            {
+                if (double.TryParse(evt.TextBox.Text, out var stopLossPrice))
+                {
+                    DrawLinesAtPrice(stopLossPrice);
+                }
             };
 
             postionInfoTextBlock = new TextBlock
